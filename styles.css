@@ -1,0 +1,214 @@
+/* Font import and global reset */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+/* Section styles */
+section {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  /* Animated gradient effect */
+  section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black,red, black);
+animation: animate 4s linear infinite;
+  }
+
+  /* Animation keyframes */
+  @keyframes animate {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  /* Styling for individual spans */
+  section span {
+    position: relative;
+    display: block;
+    width: calc(6.25vw - 2px);
+    height: calc(6.25vw - 2px);
+    background: rgb(15, 15, 18);
+    z-index: 2;
+    transition: 1.5s;
+  }
+
+  section span:hover {
+    background: red;
+    transition: 0s;
+  }
+
+/* Profile card styling */
+/* Sign-in form styles */
+.profile-card   {
+    position: absolute;
+    width: 400px;
+    background: rgb(15, 15, 18);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px #000;
+  }
+
+  .profile-card .social-icons {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .profile-card .social-icons  h2 {
+    font-size: 2em;
+    color: red   ;
+    text-transform: uppercase;
+  }
+
+
+.profile-card .profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid red;
+}
+
+.profile-card h2 {
+    color: red;
+    font-size: 2em;
+    margin: 20px 0 10px;
+}
+
+.profile-card p {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.instagram { background-color: #E4405F; }
+.facebook { background-color: #1877F2; }
+.youtube { background-color: #FF0000; }
+.tiktok { background-color: #000000; }
+.whatsapp { background-color: #25D366; }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+/* ::::::::: */
+.profile-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: rgb(15, 15, 18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre tous les éléments */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px #000;
+  text-align: center;
+}
+
+/* Image de profil bien centrée */
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid red;
+  display: block;
+}
+
+/* Nom bien centré */
+h2 {
+  color: red;
+  font-size: 2em;
+  margin-top: 15px; /* Espacement après la photo */
+  margin-bottom: 5px; /* Réduit l'écart avec Content Creator */
+}
+
+/* Titre "Content Creator" bien centré */
+p {
+  color: #fff;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Augmenter l'espace entre les icônes */
+  margin-top: 15px; /* Ajuster l'espace au-dessus */
+}
+
+.social-icons a {
+  width: 45px; /* Taille ajustée */
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1); /* Fond légèrement transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5em; /* Taille de l'icône */
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.3); /* Effet au survol */
+}
+.profile-card .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* PROBLÈME : met les icônes en colonne */
+  gap: 40px;
+}
